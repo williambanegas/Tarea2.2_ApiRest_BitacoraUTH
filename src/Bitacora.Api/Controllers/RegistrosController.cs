@@ -1,4 +1,4 @@
-﻿using Bitacora.Application.DTOs;
+using Bitacora.Application.DTOs;
 using Bitacora.Application.Interfaces;
 using Bitacora.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ namespace Bitacora.Api.Controllers;
 [Route("api/registros")]
 public sealed class RegistrosController(IRegistroRepository repository) : ControllerBase
 {
-    // GET: /api/registros (Listar registros sin la foto completa para aligerar la respuesta)
+    // GET: /api/registros (Listar registros)
     [HttpGet]
     public async Task<ActionResult<IEnumerable<RegistroResponse>>> ObtenerTodos(CancellationToken cancellationToken)
     {
@@ -20,7 +20,7 @@ public sealed class RegistrosController(IRegistroRepository repository) : Contro
             r.Titulo,
             r.Descripcion,
             !string.IsNullOrEmpty(r.FotoBase64),
-            null, // No devolvemos la foto completa en el listado
+            r.FotoBase64,
             r.FechaCreacion
         ));
 
