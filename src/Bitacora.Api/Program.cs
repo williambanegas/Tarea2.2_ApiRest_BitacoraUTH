@@ -25,6 +25,10 @@ var app = builderApp;
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "Bitacora API v1");
+    });
 }
 
 // Manejo global de excepciones nativo en ASP.NET Core
