@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Bitacora.Api/Bitacora.Api.csproj" />
+    <Project Path="src/Bitacora.Application/Bitacora.Application.csproj" />
+    <Project Path="src/Bitacora.Domain/Bitacora.Domain.csproj" />
+    <Project Path="src/Bitacora.Infrastructure/Bitacora.Infrastructure.csproj" />
+  </Folder>
+</Solution>
