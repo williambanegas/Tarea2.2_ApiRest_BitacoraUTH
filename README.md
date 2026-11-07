@@ -361,7 +361,7 @@ Para utilizarlas, importe la coleccion en Postman y configure la variable de ent
 
 
 
-###.🔄 Diagrama de Secuencia de Gestión Interna
+### 🔄 Diagrama de Secuencia de Gestión Interna
 
     sequenceDiagram
     autonumber
@@ -396,7 +396,7 @@ Para utilizarlas, importe la coleccion en Postman y configure la variable de ent
         VM-->>UI: Muestra Toast de error al usuario
     end
 
-    ###.🎨 Representación Gráfica del Flujo de Datos
+### 🎨 Representación Gráfica del Flujo de Datos
     
 <img width="1912" height="582" alt="image" src="https://github.com/user-attachments/assets/d05b4a68-7855-4662-a53b-c548e76b91fb" />
 
