@@ -398,19 +398,5 @@ Para utilizarlas, importe la coleccion en Postman y configure la variable de ent
 
     ###.🎨 Representación Gráfica del Flujo de Datos
     
- +------------------------+        +------------------------+        +------------------------+
- |   1. VISTA (UI)        |        |   2. VIEWMODEL         |        |   3. REPOSITORIO       |
- |   AddRecordActivity    | ---->  |   RegistroViewModel    | ---->  |   RegistroRepository   |
- |  - Captura foto Base64 |        |  - Maneja LiveData     |        |  - Valida red activa   |
- |  - Dictado por voz     |        |  - Estado de Carga     |        |  - Maneja callbacks    |
- +------------------------+        +------------------------+        +------------------------+
-                                                                                  |
-                                                                                  v
- +------------------------+        +------------------------+        +------------------------+
- |   6. PERSISTENCIA      |        |   5. BACKEND API       |        |   4. CLIENTE RETROFIT  |
- |   Base Datos SQLite    | <----  |   .NET 10 Web API      | <----  |   RetrofitClient       |
- |  - Guarda Registro     |        |  - EF Core / DTOs      |        |  - Serializa JSON      |
- |  - Asigna ID único     |        |  - Endpoint /registros |        |  - Petición HTTP POST  |
- +------------------------+        +------------------------+        +------------------------+
-
+<img width="1912" height="582" alt="image" src="https://github.com/user-attachments/assets/d05b4a68-7855-4662-a53b-c548e76b91fb" />
 
