@@ -345,3 +345,16 @@ El repositorio incluye el archivo `Bitacora API - UTH.postman_collection .json` 
 - **Eliminar Registro**: Casos para eliminacion correcta (`204 No Content`) y validacion de inexistencia (`404 Not Found`).
 
 Para utilizarlas, importe la coleccion en Postman y configure la variable de entorno `baseUrl` con el valor `http://localhost:5033` o `https://localhost:7190`.
+
+
+
+
+
+*********************************************************************************************************
+
+*********************************************************************************************************
+
+###.Funcionamiento (Conceptos)
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/9b90d1ec-3d89-4c7e-85f7-b1941cd59aa7" />
+
