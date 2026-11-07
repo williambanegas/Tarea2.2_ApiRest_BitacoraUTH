@@ -362,7 +362,8 @@ Para utilizarlas, importe la coleccion en Postman y configure la variable de ent
 
 
 ###.🔄 Diagrama de Secuencia de Gestión Interna
-sequenceDiagram
+
+    sequenceDiagram
     autonumber
     actor Usuario as 👤 Usuario
     participant UI as 📱 AddRecordActivity
@@ -394,5 +395,22 @@ sequenceDiagram
         Repo-->>VM: onError("Sin conexión a internet")
         VM-->>UI: Muestra Toast de error al usuario
     end
+
+    ###.🎨 Representación Gráfica del Flujo de Datos
+    
+ +------------------------+        +------------------------+        +------------------------+
+ |   1. VISTA (UI)        |        |   2. VIEWMODEL         |        |   3. REPOSITORIO       |
+ |   AddRecordActivity    | ---->  |   RegistroViewModel    | ---->  |   RegistroRepository   |
+ |  - Captura foto Base64 |        |  - Maneja LiveData     |        |  - Valida red activa   |
+ |  - Dictado por voz     |        |  - Estado de Carga     |        |  - Maneja callbacks    |
+ +------------------------+        +------------------------+        +------------------------+
+                                                                                  |
+                                                                                  v
+ +------------------------+        +------------------------+        +------------------------+
+ |   6. PERSISTENCIA      |        |   5. BACKEND API       |        |   4. CLIENTE RETROFIT  |
+ |   Base Datos SQLite    | <----  |   .NET 10 Web API      | <----  |   RetrofitClient       |
+ |  - Guarda Registro     |        |  - EF Core / DTOs      |        |  - Serializa JSON      |
+ |  - Asigna ID único     |        |  - Endpoint /registros |        |  - Petición HTTP POST  |
+ +------------------------+        +------------------------+        +------------------------+
 
 
