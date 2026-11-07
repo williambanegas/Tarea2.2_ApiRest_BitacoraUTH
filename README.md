@@ -358,3 +358,41 @@ Para utilizarlas, importe la coleccion en Postman y configure la variable de ent
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/9b90d1ec-3d89-4c7e-85f7-b1941cd59aa7" />
 
+
+
+
+###.🔄 Diagrama de Secuencia de Gestión Interna
+sequenceDiagram
+    autonumber
+    actor Usuario as 👤 Usuario
+    participant UI as 📱 AddRecordActivity
+    participant VM as ⚡ RegistroViewModel
+    participant Repo as 🛡️ RegistroRepository
+    participant Retrofit as 🌐 RetrofitClient
+    participant API as 💻 API .NET 10
+    participant DB as 🗄️ SQLite DB
+
+    Usuario->>UI: Toca "+ Capturar en Campo"
+    UI->>UI: Procesa Foto (Base64) + Dictado por Voz
+    UI->>VM: createRecord(newRecord)
+    VM->>VM: isLoadingLiveData.setValue(true)
+    VM->>Repo: createRecord(record)
+    Repo->>Repo: Validar red (NetworkCapabilities)
+    
+    alt Conexión Establecida
+        Repo->>Retrofit: POST /api/registros (JSON)
+        Retrofit->>API: Petición HTTP REST (Puerto 5033)
+        API->>DB: Entity Framework Core inserta registro
+        DB-->>API: Confirmación de almacenamiento
+        API-->>Retrofit: HTTP 201 Created (JSON Response)
+        Retrofit-->>Repo: onSuccess(Record)
+        Repo-->>VM: Notifica Éxito
+        VM->>VM: operationSuccessLiveData.setValue(true)
+        VM-->>UI: Notifica cierre de pantalla
+        UI->>Usuario: Refresca lista en HomeActivity
+    else Sin Conexión
+        Repo-->>VM: onError("Sin conexión a internet")
+        VM-->>UI: Muestra Toast de error al usuario
+    end
+
+
