@@ -354,7 +354,7 @@ Para utilizarlas, importe la coleccion en Postman y configure la variable de ent
 
 *********************************************************************************************************
 
-###.Funcionamiento (Conceptos)
+### Funcionamiento (Conceptos)
 
 <img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/9b90d1ec-3d89-4c7e-85f7-b1941cd59aa7" />
 
